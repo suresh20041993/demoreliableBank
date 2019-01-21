@@ -46,7 +46,8 @@ import { MatAutocompleteModule,
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,MatTableDataSource} from '@angular/material';
+    MatTreeModule} from '@angular/material';
+import { LeadsearchComponent } from './leadsearch/leadsearch.component';
 
 
 @NgModule({
@@ -62,11 +63,13 @@ import { MatAutocompleteModule,
         FormsModule,
         MatCheckboxModule,
         MatCardModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatTableModule,
+        MatPaginatorModule
         
         
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, LeadcreationComponent,
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, LeadcreationComponent, LeadsearchComponent,
      
     ]
 })

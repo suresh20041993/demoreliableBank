@@ -1,0 +1,43 @@
+<mat-form-field>
+  <input matInput (keyup)="onSearch($event.target.value)" placeholder="LEAD SEARCH BY NAME">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="leadId">
+    <th mat-header-cell *matHeaderCellDef> leadId </th>
+    <td mat-cell *matCellDef="let element"> {{element?.leadId}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="leadName">
+    <th mat-header-cell *matHeaderCellDef> leadName </th>
+    <td mat-cell *matCellDef="let element"> {{element?.leadName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="leadType">
+    <th mat-header-cell *matHeaderCellDef> leadType </th>
+    <td mat-cell *matCellDef="let element"> {{element?.leadType}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="lead_mobileNumber">
+    <th mat-header-cell *matHeaderCellDef>MobileNumber </th>
+    <td mat-cell *matCellDef="let element"> {{element?.lead_mobileNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lead_sourceChannel">
+    <th mat-header-cell *matHeaderCellDef>Channel </th>
+    <td mat-cell *matCellDef="let element"> {{element?.lead_sourceChannel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="entryDate">
+    <th mat-header-cell *matHeaderCellDef>Created On </th>
+    <td mat-cell *matCellDef="let element"> {{element?.entryDate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

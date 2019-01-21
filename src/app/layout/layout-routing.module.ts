@@ -5,6 +5,7 @@ import { LeadcreationComponent } from './leadcreation/leadcreation.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule }  from '@angular/material';
+import { LeadsearchComponent } from './leadsearch/leadsearch.component';
 
 const routes: Routes = [
     {
@@ -20,7 +21,8 @@ const routes: Routes = [
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
-            { path :'leadcreation', component:LeadcreationComponent}
+            { path :'leadcreation', component:LeadcreationComponent},
+            { path :'leadsearch', component:LeadsearchComponent}
         ]
     }
 ];

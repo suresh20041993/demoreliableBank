@@ -15,33 +15,19 @@ const httpOptions = {
   })
 };
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardService {
-
+export class LeadsearchService {
 
   readonly rootUrl = 'http://localhost:3000/api';
-
   constructor(private http: HttpClient) { }
 
+  searchLeadList(data): Observable<any> {
+    httpOptions.headers = httpOptions.headers.set('Content-Type', 'application/json');
+    return this.http.post(this.rootUrl + '/leadSearch',data, httpOptions).pipe(map(res => res));
+  }
 
-//lead Display api
-    view()
-          {
-            var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-           // return this.http.post(this.rootUrl + '/leadDisplay', data, { headers: reqHeader });
-            return this.http.post(this.rootUrl + '/leadDisplay',{ headers: reqHeader });
-        }
-   
-   
-   
-        // LeadsList(): Observable<any> {
-        //   httpOptions.headers = httpOptions.headers.set('Content-Type', 'application/json');
-        //   return this.http.post(this.rootUrl + '/leadDisplay',
-        //   data, httpOptions).pipe(map(res => res));
-        // }
-   
-   
-   
-      }
+
+}
